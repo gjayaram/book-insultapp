@@ -21,8 +21,7 @@ public class InsultGenerator
 
 	   String username = System.getenv("POSTGRESQL_USER");
 	   String password = System.getenv("PGPASSWORD");
-	   Connection connection = DriverManager.getConnection(databaseURL, username,
-	   password);
+	   Connection connection = DriverManager.getConnection(databaseURL, username, password);
 
 	   if (connection != null) 
 	   {
@@ -35,8 +34,7 @@ public class InsultGenerator
 			{
 				article = "a";
 			}
-			theInsult =  String.format("Thou art %s %s %s %s!", article,
-			rs.getString("first"), rs.getString("second"), rs.getString("noun"));
+			theInsult =  String.format("Thou art %s %s %s %s!", article, rs.getString("first"), rs.getString("second"), rs.getString("noun"));
 		    }
 		   rs.close();
 		   connection.close();
